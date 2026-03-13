@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Опросник — 100 вопросов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Опросник: 100 вопросов</h1>
+    <form action="send_email.php" method="POST">
+        <!-- 1. Базовая информация -->
+        <div class="section">
+            <h2>1. Базовая информация</h2>
+            <label>1. Сколько вам лет? <input type="text" name="q1" required></label>
+            <label>2. Как вас зовут? <input type="text" name="q2" required></label>
+            <label>3. Какое у вас отчество? <input type="text" name="q3"></label>
+            <label>4. Какой у вас пол?
+                <select name="q4" required>
+                    <option value="">Выберите</option>
+                    <option value="мужской">Мужской</option>
+                    <option value="женский">Женский</option>
+                </select>
+            </label>
+            <label>5. В каком городе вы живёте? <input type="text" name="q5" required></label>
+            <label>6. В какой стране вы живёте? <input type="text" name="q6" required></label>
+            <label>7. Какой у вас номер телефона? <input type="tel" name="q7"></label>
+            <label>8. Какой у вас e‑mail? <input type="email" name="q8"></label>
+            <label>9. Есть ли у вас аккаунт в Telegram?
+                <select name="q9" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>10. Есть ли у вас аккаунт во «ВКонтакте»?
+                <select name="q10" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+        </div>
+
+        <!-- 2. Семья и окружение -->
+        <div class="section">
+            <h2>2. Семья и окружение</h2>
+            <label>11. Сколько человек в вашей семье? <input type="text" name="q11" required></label>
+            <label>12. Есть ли у вас братья или сёстры?
+                <select name="q12" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>13. Сколько у вас братьев? <input type="text" name="q13" required></label>
+            <label>14. Сколько у вас сестёр? <input type="text" name="q14" required></label>
+            <label>15. Есть ли у вас дети?
+                <select name="q15" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>16. Сколько у вас детей? <input type="text" name="q16" required></label>
+            <label>17. Есть ли у вас домашние животные?
+                <select name="q17" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>18. Сколько у вас домашних животных? <input type="text" name="q18" required></label>
+            <label>19. Какое имя у вашего любимого питомца? <input type="text" name="q19"></label>
+            <label>20. С кем вы живёте? <input type="text" name="q20" required></label>
+        </div>
+
+        <!-- 3. Образование и работа -->
+        <div class="section">
+            <h2>3. Образование и работа</h2>
+            <label>21. В каком учебном заведении вы учитесь/учились? <input type="text" name="q21" required></label>
+            <label>22. Какую специальность вы получили/получаете? <input type="text" name="q22" required></label>
+            <label>23. В каком году вы закончили школу? <input type="text" name="q23" required></label>
+            <label>24. Получили ли вы высшее образование?
+                <select name="q24" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>25. Где вы работаете? <input type="text" name="q25" required></label>
+            <label>26. Какая у вас должность? <input type="text" name="q26" required></label>
+            <label>27. Сколько лет вы уже работаете на текущем месте? <input type="text" name="q27" required></label>
+            <label>28. Хотите ли вы сменить работу в ближайшее время?
+                <select name="q28" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>29. Чему вы хотели бы научиться в ближайшие 2 года? <input type="text" name="q29" required></label>
+            <label>30. Какой предмет в школе был вашим любимым? <input type="text" name="q30" required></label>
+        </div>
+
+        <!-- 4. Хобби и интересы -->
+        <div class="section">
+            <h2>4. Хобби и интересы</h2>
+            <label>31. Какое ваше хобби? <input type="text" name="q31" required></label>
+            <label>32. Чем вы любите заниматься в свободное время? <input type="text" name="q32" required></label>
+            <label>33. Читаете ли вы книги?
+                <select name="q33" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>34. Какой ваш любимый жанр книг? <input type="text" name="q34"></label>
+            <label>35. Какой последний фильм вы посмотрели? <input type="text" name="q35" required></label>
+            <label>36. Какой ваш любимый фильм? <input type="text" name="q36" required></label>
+            <label>37. Какую музыку вы слушаете? <input type="text" name="q3
+                         <label>37. Какую музыку вы слушаете? <input type="text" name="q37" required></label>
+            <label>38. Какой ваш любимый музыкальный исполнитель? <input type="text" name="q38" required></label>
+            <label>39. Играете ли вы в компьютерные игры?
+                <select name="q39" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>40. Какая ваша любимая компьютерная игра? <input type="text" name="q40"></label>
+        </div>
+
+        <!-- 5. Социальные сети и технологии -->
+        <div class="section">
+            <h2>5. Социальные сети и технологии</h2>
+            <label>41. Какой мессенджер вы используете чаще всего? <input type="text" name="q41" required></label>
+            <label>42. Сколько времени в день вы проводите в соцсетях? <input type="text" name="q42" required></label>
+            <label>43. Какой у вас любимый блог или канал на YouTube? <input type="text" name="q43"></label>
+            <label>44. Пользуетесь ли вы TikTok?
+                <select name="q44" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>45. Сколько у вас подписчиков во «ВКонтакте»? <input type="text" name="q45" required></label>
+            <label>46. Сколько у вас подписок во «ВКонтакте»? <input type="text" name="q46" required></label>
+            <label>47. Есть ли у вас канал в Telegram?
+                <select name="q47" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>48. Сколько чатов в Telegram вы регулярно читаете? <input type="text" name="q48" required></label>
+            <label>49. Пользуетесь ли вы сервисами онлайн‑обучения?
+                <select name="q49" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>50. Какое приложение на телефоне вы открываете чаще всего? <input type="text" name="q50" required></label>
+        </div>
+
+        <!-- 6. Путешествия и отдых -->
+        <div class="section">
+            <h2>6. Путешествия и отдых</h2>
+            <label>51. В каких странах вы были? <input type="text" name="q51" required></label>
+            <label>52. Какое место вы мечтаете посетить? <input type="text" name="q52" required></label>
+            <label>53. Где вы провели последний отпуск? <input type="text" name="q53" required></label>
+            <label>54. Любите ли вы путешествовать?
+                <select name="q54" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>55. На чём вы предпочитаете путешествовать? <input type="text" name="q55" required></label>
+            <label>56. Сколько дней отпуска вам достаточно для полноценного отдыха? <input type="text" name="q56" required></label>
+            <label>57. Вы предпочитаете активный отдых или расслабление на пляже? <input type="text" name="q57" required></label>
+            <label>58. Были ли вы когда‑нибудь за границей?
+                <select name="q58" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>59. Какой город России вам больше всего понравился? <input type="text" name="q59" required></label>
+            <label>60. Хотите ли вы переехать в другой город или страну?
+                <select name="q60" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+        </div>
+
+        <!-- 7. Еда и привычки -->
+        <div class="section">
+            <h2>7. Еда и привычки</h2>
+            <label>61. Какой ваш любимый завтрак? <input type="text" name="q61" required></label>
+            <label>62. Какое ваше любимое блюдо? <input type="text" name="q62" required></label>
+            <label>63. Вы любите сладкое?
+                <select name="q63" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>64. Какой напиток вы пьёте чаще всего? <input type="text" name="q64" required></label>
+            <label>65. Вы готовите дома или предпочитаете заказывать еду? <input type="text" name="q65" required></label>
+            <label>66. Есть ли у вас пищевые ограничения? <input type="text" name="q66"></label>
+            <label>67. Как часто вы едите фастфуд? <input type="text" name="q67" required></label>
+            <label>68. Вы пьёте кофе?
+                <select name="q68" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>69. Какое мороженое вы любите больше всего? <input type="text" name="q69" required></label>
+            <label>70. Что вы обычно берёте с собой на перекус? <input type="text" name="q70" required></label>
+        </div>
+
+        <!-- 8. Характер и предпочтения -->
+        <div class="section">
+            <h2>8. Характер и предпочтения</h2>
+            <label>71. Вы жаворонок или сова? <input type="text" name="q71" required></label>
+            <label>72. Что вас больше мотивирует: деньги или признание? <input type="text" name="q72" required></label>
+            <label>73. Вы интроверт или экстраверт? <input type="text" name="q73" required></label>
+            <label>74. Что для вас важнее: карьера или семья? <input type="text" name="q74" required></label>
+            <label>75. Вы легко заводите новые знакомства?
+                <select name="q75" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>76. Что вас раздражает больше всего? <input type="text" name="q76" required></label>
+            <label>77. Что поднимает вам настроение? <input type="text" name="q77" required></label>
+            <label>78. Вы склонны планировать или действовать спонтанно? <input type="text" name="q78" required></label>
+            <label>79. Вы верите в удачу?
+                <select name="q79" required>
+                    <option value="">Выберите</option>
+                    <option value="да">Да</option>
+                    <option value="нет">Нет</option>
+                </select>
+            </label>
+            <label>80. Какой ваш главный страх? <input type="text" name="q80" required></label>
+        </div>
+
+                <!-- 9. Цели и мечты -->
+        <div class="section">
+            <h2>9. Цели и мечты</h2>
+            <label>81. Какая ваша главная цель на ближайшие 5 лет? <input type="text" name="q81" required></label>
+            <label>82. О какой профессии вы мечтали в детстве? <input type="text" name="q82" required></label>
+            <label>83. Что вы хотите достичь в жизни? <textarea name="q83" rows="3" required></textarea>
+            <label>84. Какой самый смелый поступок вы совершили? <textarea name="q84" rows="3" required></textarea>
+            <label>85. Что бы вы сделали, если бы выиграли миллион долларов? <textarea name="q85" rows="3" required></textarea>
+            <label>86. Какое ваше самое большое достижение? <textarea name="q86" rows="3" required></textarea>
+            <label>87. Чего вы больше всего хотите добиться в карьере? <input type="text" name="q87" required></label>
+            <label>88. Какой навык вы хотели бы освоить в совершенстве? <input type="text" name="q88" required></label>
+            <label>89. Где бы вы хотели жить через 10 лет? <input type="text" name="q89" required></label>
+            <label>90. Какое ваше жизненное кредо (девиз)? <input type="text" name="q90" required></label>
+        </div>
+
+        <!-- 10. Разное -->
+        <div class="section">
+            <h2>10. Разное</h2>
+            <label>91. Какой самый необычный подарок вы получали? <textarea name="q91" rows="3" required></textarea>
+            <label>92. Какое самое странное событие происходило с вами? <textarea name="q92" rows="3" required></textarea>
+            <label>93. Если бы вы могли встретиться с любой исторической личностью, кто бы это был? <input type="text" name="q93" required></label>
+            <label>94. Какой фильм/книга изменили ваше мировоззрение? <input type="text" name="q94" required></label>
+            <label>95. Что вас вдохновляет? <textarea name="q95" rows="3" required></textarea>
+            <label>96. Какой совет вы бы дали себе 10‑летней давности? <textarea name="q96" rows="3" required></textarea>
+            <label>97. Что для вас значит счастье? <textarea name="q97" rows="3" required></textarea>
+            <label>98. Какое ваше любимое время года и почему? <input type="text" name="q98" required></label>
+            <label>99. Если бы у вас была суперспособность, какая бы это была? <input type="text" name="q99" required></label>
+            <label>100. Что бы вы хотели, чтобы люди запомнили о вас? <textarea name="q100" rows="3" required></textarea>
+        </div>
+
+        <button type="submit">Отправить ответы</button>
+    </form>
+</body>
+  </html>
